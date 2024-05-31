@@ -22,14 +22,14 @@ public class Menu {
         do {
             System.out.println("Menu:");
             System.out.println("a) Cargar entradas desde un archivo");
-            System.out.println("b) Agregar");
-            System.out.println("c) Eliminar");
-            System.out.println("d) Buscar");
-            System.out.println("e) Mostrar");
-            System.out.println("f) Salir");
-            System.out.print("Seleccione una opción: \n");
+            System.out.println("b) Add");
+            System.out.println("c) Delete");
+            System.out.println("d) Search");
+            System.out.println("e) Display");
+            System.out.println("f) Exit");
+            System.out.print("Select an option: \n");
             choice = scanner.next().charAt(0);
-            scanner.nextLine(); // Consumir la nueva línea restante
+            scanner.nextLine();
 
             switch (choice) {
                 case 'a':
@@ -57,7 +57,7 @@ public class Menu {
     }
 
     private void loadFromFile() {
-        System.out.print("Ingrese el nombre del archivo: ");
+        System.out.print("Enter the file name: ");
         String fileName = scanner.nextLine();
         try (BufferedReader reader = new BufferedReader(new FileReader(fileName))) {
             String line;
@@ -76,32 +76,32 @@ public class Menu {
                             phone);
                     addressBook.addEntry(entry);
                 } else {
-                    System.out.println("Formato de línea inválido: " + line);
+                    System.out.println("Invalid line format: " + line);
                 }
             }
-            System.out.println("Entradas cargadas desde el archivo.");
+            System.out.println("Entries loaded from the file.");
         } catch (IOException e) {
-            System.out.println("Error al leer el archivo: " + e.getMessage());
+            System.out.println("Error reading the file: " + e.getMessage());
         }
     }
 
     private void addEntry() {
-        System.out.println("Agregar nuevo contacto:");
-        System.out.print("Nombre: ");
+        System.out.println("Add a new contact:");
+        System.out.print("Name: ");
         String firstName = scanner.nextLine();
-        System.out.print("Apellido: ");
+        System.out.print("Last name: ");
         String lastName = scanner.nextLine();
-        System.out.print("Calle: ");
+        System.out.print("Street: ");
         String street = scanner.nextLine();
-        System.out.print("Ciudad: ");
+        System.out.print("City: ");
         String city = scanner.nextLine();
-        System.out.print("Estado: ");
+        System.out.print("State: ");
         String state = scanner.nextLine();
-        System.out.print("Código Postal: ");
+        System.out.print("Postal Code: ");
         String postalCode = scanner.nextLine();
-        System.out.print("Correo Electrónico: ");
+        System.out.print("Email: ");
         String email = scanner.nextLine();
-        System.out.print("Teléfono: ");
+        System.out.print("Phone: ");
         String phone = scanner.nextLine();
 
         AddressEntry entry = new AddressEntry(firstName, lastName, street, city, state, postalCode, email, phone);
@@ -109,39 +109,39 @@ public class Menu {
     }
 
     private void deleteEntry() {
-        System.out.print("Ingrese el apellido para buscar y eliminar: ");
+        System.out.print("Enter the last name to search and delete: ");
         String lastName = scanner.nextLine();
         List<AddressEntry> entries = addressBook.searchEntry(lastName);
 
         if (entries.isEmpty()) {
-            System.out.println("No se encontraron contactos.");
+            System.out.println("No contacts found.");
         } else {
             for (int i = 0; i < entries.size(); i++) {
                 System.out.println((i + 1) + ": " + entries.get(i));
             }
-            System.out.print("Seleccione el número del contacto a eliminar: ");
+            System.out.print("Select the number of the contact to delete: ");
             try {
                 String input = scanner.nextLine();
                 int index = Integer.parseInt(input) - 1;
                 if (index >= 0 && index < entries.size()) {
                     addressBook.removeEntry(entries.get(index));
-                    System.out.println("Contacto eliminado.");
+                    System.out.println("Contact deleted.");
                 } else {
-                    System.out.println("Selección inválida. Por favor, ingrese un número dentro del rango mostrado.");
+                    System.out.println("Invalid selection. Please enter a number within the displayed range.");
                 }
             } catch (NumberFormatException e) {
-                System.out.println("Entrada inválida. Por favor, ingrese un número.");
+                System.out.println("Invalid input. Please enter a number.");
             }
         }
     }
 
     private void searchEntry() {
-        System.out.print("Ingrese el inicio del apellido para buscar: ");
+        System.out.print("Enter the last name to search: ");
         String lastName = scanner.nextLine();
         List<AddressEntry> entries = addressBook.searchEntry(lastName);
 
         if (entries.isEmpty()) {
-            System.out.println("No se encontraron contactos.");
+            System.out.println("No contacts found.");
         } else {
             for (AddressEntry entry : entries) {
                 System.out.println(entry);
@@ -153,7 +153,7 @@ public class Menu {
         List<AddressEntry> entries = addressBook.getAllEntries();
 
         if (entries.isEmpty()) {
-            System.out.println("No hay contactos para mostrar.");
+            System.out.println("No contacts to display.");
         } else {
             for (AddressEntry entry : entries) {
                 System.out.println(entry);

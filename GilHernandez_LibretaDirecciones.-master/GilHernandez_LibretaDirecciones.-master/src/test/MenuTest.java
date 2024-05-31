@@ -87,7 +87,6 @@ public class MenuTest {
 
         menu.searchEntry();
 
-        // Assuming search results are printed to console
     }
 
     @Test
@@ -101,6 +100,5 @@ public class MenuTest {
 
         menu.displayAllEntries();
 
-        // Assuming entries are printed to console
     }
 }
