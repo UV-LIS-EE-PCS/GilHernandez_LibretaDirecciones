@@ -94,7 +94,7 @@ public class AddressEntry {
 
     @Override
     public String toString() {
-        return String.format("Name: %s %s\nStreet: %s\nCity: %s\nState: %s\nPostal Code: %s\nEmail: %s\nPhone: %s",
+        return String.format("Name: %s %s\nStreet: %s\nCity: %s\nState: %s\nPostal Code: %s\nEmail: %s\nPhone: %s\n",
                 firstName, lastName, street, city, state, postalCode, email, phone);
     }
 

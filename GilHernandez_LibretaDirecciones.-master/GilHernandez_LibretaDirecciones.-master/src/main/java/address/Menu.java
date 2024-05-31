@@ -27,7 +27,7 @@ public class Menu {
             System.out.println("d) Buscar");
             System.out.println("e) Mostrar");
             System.out.println("f) Salir");
-            System.out.print("Seleccione una opción: ");
+            System.out.print("Seleccione una opción: \n");
             choice = scanner.next().charAt(0);
             scanner.nextLine(); // Consumir la nueva línea restante
 
