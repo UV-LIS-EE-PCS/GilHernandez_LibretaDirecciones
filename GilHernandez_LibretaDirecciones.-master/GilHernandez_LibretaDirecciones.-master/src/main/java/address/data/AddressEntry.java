@@ -1,3 +1,5 @@
+package address.data;
+
 import java.util.Objects;
 
 public class AddressEntry {
@@ -15,7 +17,7 @@ public class AddressEntry {
     }
 
     public AddressEntry(String firstName, String lastName, String street, String city, String state, String postalCode,
-                        String email, String phone) {
+            String email, String phone) {
         this.firstName = firstName;
         this.lastName = lastName;
         this.street = street;

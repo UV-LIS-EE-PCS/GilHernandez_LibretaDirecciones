@@ -1,3 +1,5 @@
+package address;
+
 import address.data.AddressBook;
 
 public class AddressBookApplication {
