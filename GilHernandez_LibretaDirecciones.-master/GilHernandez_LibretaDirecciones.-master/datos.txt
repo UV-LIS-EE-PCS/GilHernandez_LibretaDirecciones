@@ -1,0 +1,40 @@
+John
+Doe
+123 Main St
+Anytown
+AnyState
+12345
+john.doe@example.com
+555-123-4567
+Alice
+Smith
+456 Elm St
+Springfield
+SomeState
+54321
+alice.smith@example.com
+555-987-6543
+Michael
+Johnson
+789 Oak St
+Metropolis
+AnotherState
+67890
+michael.johnson@example.com
+555-456-7890
+Emily
+Brown
+101 Pine St
+Lakeside
+LakeState
+13579
+emily.brown@example.com
+555-321-0987
+David
+Lee
+246 Maple St
+Riverdale
+RiverState
+24680
+david.lee@example.com
+555-789-0123

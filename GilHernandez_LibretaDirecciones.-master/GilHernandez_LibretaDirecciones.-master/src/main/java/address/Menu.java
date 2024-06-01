@@ -2,9 +2,6 @@ package address;
 
 import address.data.AddressBook;
 import address.data.AddressEntry;
-import java.io.BufferedReader;
-import java.io.FileReader;
-import java.io.IOException;
 import java.util.List;
 import java.util.Scanner;
 
@@ -33,7 +30,7 @@ public class Menu {
 
             switch (choice) {
                 case 'a':
-                    loadFromFile();
+                    readContactFromTextFile();
                     break;
                 case 'b':
                     addEntry();
@@ -56,33 +53,11 @@ public class Menu {
         } while (choice != 'f');
     }
 
-    private void loadFromFile() {
-        System.out.print("Enter the file name: ");
-        String fileName = scanner.nextLine();
-        try (BufferedReader reader = new BufferedReader(new FileReader(fileName))) {
-            String line;
-            while ((line = reader.readLine()) != null) {
-                String[] data = line.split(",");
-                if (data.length == 8) {
-                    String firstName = data[0];
-                    String lastName = data[1];
-                    String street = data[2];
-                    String city = data[3];
-                    String state = data[4];
-                    String postalCode = data[5];
-                    String email = data[6];
-                    String phone = data[7];
-                    AddressEntry entry = new AddressEntry(firstName, lastName, street, city, state, postalCode, email,
-                            phone);
-                    addressBook.addEntry(entry);
-                } else {
-                    System.out.println("Invalid line format: " + line);
-                }
-            }
-            System.out.println("Entries loaded from the file.");
-        } catch (IOException e) {
-            System.out.println("Error reading the file: " + e.getMessage());
-        }
+    public void readContactFromTextFile() {
+        System.out.println("Enter the name of the file:");
+        String filename = scanner.nextLine();
+        addressBook.readFromATextFile(filename);
+
     }
 
     private void addEntry() {
