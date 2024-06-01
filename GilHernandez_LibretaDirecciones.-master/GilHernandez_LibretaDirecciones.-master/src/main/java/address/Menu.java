@@ -21,7 +21,7 @@ public class Menu {
         char choice;
         do {
             System.out.println("Menu:");
-            System.out.println("a) Cargar entradas desde un archivo");
+            System.out.println("a) Load entries from a file");
             System.out.println("b) Add");
             System.out.println("c) Delete");
             System.out.println("d) Search");
@@ -48,10 +48,10 @@ public class Menu {
                     displayAllEntries();
                     break;
                 case 'f':
-                    System.out.println("Saliendo...");
+                    System.out.println("Exiting the program...");
                     break;
                 default:
-                    System.out.println("Opción inválida");
+                    System.out.println("Invalid option");
             }
         } while (choice != 'f');
     }
@@ -136,15 +136,17 @@ public class Menu {
     }
 
     private void searchEntry() {
-        System.out.print("Enter the last name to search: ");
+        System.out.print("Enter the last name or the first few letters to search: ");
         String lastName = scanner.nextLine();
         List<AddressEntry> entries = addressBook.searchEntry(lastName);
 
         if (entries.isEmpty()) {
             System.out.println("No contacts found.");
         } else {
+            System.out.println("Contacts found:");
+            int count = 1;
             for (AddressEntry entry : entries) {
-                System.out.println(entry);
+                System.out.println(count++ + " " + entry);
             }
         }
     }
@@ -155,8 +157,9 @@ public class Menu {
         if (entries.isEmpty()) {
             System.out.println("No contacts to display.");
         } else {
+            int count = 1;
             for (AddressEntry entry : entries) {
-                System.out.println(entry);
+                System.out.println(count++ + ": " + entry);
             }
         }
     }

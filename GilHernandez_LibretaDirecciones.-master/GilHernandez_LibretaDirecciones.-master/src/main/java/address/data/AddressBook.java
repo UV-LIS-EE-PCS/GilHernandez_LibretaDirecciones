@@ -13,9 +13,9 @@ public class AddressBook {
     public void addEntry(AddressEntry entry) {
         if (!isDuplicate(entry)) {
             entries.add(entry);
-            System.out.println("Contacto agregado.");
+            System.out.println("Contact added.");
         } else {
-            System.out.println("Este contacto ya existe.");
+            System.out.println("This contact already exists.");
         }
     }
 

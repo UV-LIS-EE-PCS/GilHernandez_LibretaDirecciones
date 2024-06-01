@@ -1,0 +1,44 @@
+First Name: John
+Last Name: Doe
+Street: 123 Main St
+City: Anytown
+State: AnyState
+Postal Code: 12345
+Email: john.doe@example.com
+Phone: 555-123-4567
+
+First Name: Alice
+Last Name: Smith
+Street: 456 Elm St
+City: Springfield
+State: SomeState
+Postal Code: 54321
+Email: alice.smith@example.com
+Phone: 555-987-6543
+
+First Name: Michael
+Last Name: Johnson
+Street: 789 Oak St
+City: Metropolis
+State: AnotherState
+Postal Code: 67890
+Email: michael.johnson@example.com
+Phone: 555-456-7890
+
+First Name: Emily
+Last Name: Brown
+Street: 101 Pine St
+City: Lakeside
+State: LakeState
+Postal Code: 13579
+Email: emily.brown@example.com
+Phone: 555-321-0987
+
+First Name: David
+Last Name: Lee
+Street: 246 Maple St
+City: Riverdale
+State: RiverState
+Postal Code: 24680
+Email: david.lee@example.com
+Phone: 555-789-0123
