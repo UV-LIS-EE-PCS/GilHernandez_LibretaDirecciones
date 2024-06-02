@@ -60,12 +60,26 @@ public class AddressBook {
     }
 
     /**
-     * Returns all entries in the address book.
+     * Returns all entries in the address book sorted alphabetically by name.
      *
      * @return a list of all AddressEntry objects
      */
     public List<AddressEntry> getAllEntries() {
-        return new ArrayList<>(entries);
+        List<AddressEntry> sortedEntries = new ArrayList<>(entries);
+
+        for (int i = 0; i < sortedEntries.size() - 1; i++) {
+            int minIndex = i;
+            for (int j = i + 1; j < sortedEntries.size(); j++) {
+                if (sortedEntries.get(j).getFirstName().compareTo(sortedEntries.get(minIndex).getFirstName()) < 0) {
+                    minIndex = j;
+                }
+            }
+            AddressEntry temp = sortedEntries.get(i);
+            sortedEntries.set(i, sortedEntries.get(minIndex));
+            sortedEntries.set(minIndex, temp);
+        }
+
+        return sortedEntries;
     }
 
     /**
