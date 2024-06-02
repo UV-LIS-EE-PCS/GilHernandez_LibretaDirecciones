@@ -5,15 +5,28 @@ import address.data.AddressEntry;
 import java.util.List;
 import java.util.Scanner;
 
+/**
+ * The Menu class provides a text-based menu for interacting with the Address
+ * Book.
+ */
+
 public class Menu {
     private AddressBook addressBook;
     private Scanner scanner;
 
+    /**
+     * Constructs a Menu with the specified AddressBook.
+     *
+     * @param addressBook the AddressBook to be used
+     */
     public Menu(AddressBook addressBook) {
         this.addressBook = addressBook;
         scanner = new Scanner(System.in);
     }
 
+    /**
+     * Displays the menu and processes the input.
+     */
     public void displayMenu() {
         char choice;
         do {
@@ -53,6 +66,10 @@ public class Menu {
         } while (choice != 'f');
     }
 
+    /**
+     * Prompts the user to enter the name of a file to load contacts from and loads
+     * the contacts.
+     */
     public void readContactFromTextFile() {
         System.out.println("Enter the name of the file:");
         String filename = scanner.nextLine();
@@ -60,6 +77,10 @@ public class Menu {
 
     }
 
+    /**
+     * Prompts the user to enter contact details and adds a new entry to the address
+     * book.
+     */
     private void addEntry() {
         System.out.println("Add a new contact:");
         System.out.print("Name: ");
@@ -83,6 +104,10 @@ public class Menu {
         addressBook.addEntry(entry);
     }
 
+    /**
+     * Prompts the user to enter a last name, searches for matching entries, and
+     * allows the user to delete a selected entry.
+     */
     private void deleteEntry() {
         System.out.print("Enter the last name to search and delete: ");
         String lastName = scanner.nextLine();
@@ -110,6 +135,10 @@ public class Menu {
         }
     }
 
+    /**
+     * Prompts the user to enter a last name or part of a last name, searches for
+     * matching entries, and displays the results.
+     */
     private void searchEntry() {
         System.out.print("Enter the last name or the first few letters to search: ");
         String lastName = scanner.nextLine();
@@ -126,6 +155,9 @@ public class Menu {
         }
     }
 
+    /**
+     * Displays all entries in the address book.
+     */
     private void displayAllEntries() {
         List<AddressEntry> entries = addressBook.getAllEntries();
 

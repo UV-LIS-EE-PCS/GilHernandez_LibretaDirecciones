@@ -2,6 +2,10 @@ package address.data;
 
 import java.util.Objects;
 
+/**
+ * This class represents a single entry in an address book.
+ */
+
 public class AddressEntry {
     private String firstName;
     private String lastName;
@@ -12,10 +16,25 @@ public class AddressEntry {
     private String email;
     private String phone;
 
+    /**
+     * Default constructor.
+     */
     public AddressEntry() {
 
     }
 
+    /**
+     * Constructs a new AddressEntry with the specified details.
+     *
+     * @param firstName  the first name of the contact
+     * @param lastName   the last name of the contact
+     * @param street     the street address of the contact
+     * @param city       the city of the contact
+     * @param state      the state of the contact
+     * @param postalCode the postal code of the contact
+     * @param email      the email address of the contact
+     * @param phone      the phone number of the contact
+     */
     public AddressEntry(String firstName, String lastName, String street, String city, String state, String postalCode,
             String email, String phone) {
         this.firstName = firstName;
@@ -28,6 +47,7 @@ public class AddressEntry {
         this.phone = phone;
     }
 
+    // Getters and setters for each field
     public String getFirstName() {
         return firstName;
     }
@@ -92,12 +112,23 @@ public class AddressEntry {
         this.phone = phone;
     }
 
+    /**
+     * Returns a string representation of the AddressEntry.
+     *
+     * @return a formatted string containing the contact's details
+     */
     @Override
     public String toString() {
         return String.format("Name: %s %s\nStreet: %s\nCity: %s\nState: %s\nPostal Code: %s\nEmail: %s\nPhone: %s\n",
                 firstName, lastName, street, city, state, postalCode, email, phone);
     }
 
+    /**
+     * Checks if this AddressEntry is equal to another object.
+     *
+     * @param o the object to compare to
+     * @return true if the objects are equal, false otherwise
+     */
     @Override
     public boolean equals(Object o) {
         if (this == o)
@@ -115,6 +146,11 @@ public class AddressEntry {
                 Objects.equals(phone, that.phone);
     }
 
+    /**
+     * Returns a hash code value for the AddressEntry.
+     *
+     * @return the hash code value
+     */
     @Override
     public int hashCode() {
         return Objects.hash(firstName, lastName, street, city, state, postalCode, email, phone);
